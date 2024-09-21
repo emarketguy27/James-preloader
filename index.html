@@ -3,143 +3,280 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page Reveal Animation | jamesdennis.org</title>
+    <title>jamesdennis.org</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.1.13/dist/lenis.css"
+    />
   </head>
   <body>
-    <div class="container">
-      <div class="pre-loader">
-        <div class="loader"></div>
-        <div class="loader-bg"></div>
-      </div>
-      <div class="loader-content">
-        <div class="count"><p>0</p></div>
-        <div class="copy"><p class="ml16">jamesdennis.org</p></div>
-      </div>
-      <div class="loader-2"></div>
-    </div>
-    <div class="site-content">
-      <nav>
-        <div class="logo">
-          <a href="https://jamesdennis.org">jamesdennis.org</a>
+    <div class="main-container">
+      <div class="hero">
+        <header class="header">
+          <nav>
+            <div class="logo" style="flex: 1; opacity: 0">
+              <a href="https://jamesdennis.org">jamesdennis.org</a>
+            </div>
+            <div class="links">
+              <a href="#about">Info <span>↴</span></a>
+              <a href="#services">Portfolio <span>↴</span></a>
+              <a href="#contact">Contact <span>↴</span></a>
+            </div>
+          </nav>
+        </header>
+        <div class="preLoad-container">
+          <div class="pre-loader">
+            <div class="loader"></div>
+            <div class="loader-bg"></div>
+          </div>
+          <div class="loader-content">
+            <div class="copy">
+              <p class="ml16">jamesdennis.org</p>
+            </div>
+            <div class="count">
+              <p>0</p>
+            </div>
+          </div>
+          <div class="loader-2"></div>
         </div>
-        <div class="links">
-          <a href="https://jamesdennis.org/#about">Info <span>↴</span></a>
-          <a href="https://jamesdennis.org/#services">Portfolio <span>↴</span></a>
-          <a href="https://jamesdennis.org/#contact">Contact <span>↴</span></a>
+        <div class="main-h1-container">
+          <div class="pl-header">
+            <h1
+              style="
+                background-image: linear-gradient(
+                  to left,
+                  rgba(255, 138, 0, 0.1),
+                  rgba(255, 136, 0, 0.25)
+                );
+                text-align: right;
+              "
+            >
+              J
+            </h1>
+            <h1
+              style="
+                background-image: linear-gradient(
+                  to left,
+                  rgba(255, 138, 0, 0.3),
+                  rgba(255, 138, 0, 0.125)
+                );
+                text-align: center;
+              "
+            >
+              a
+            </h1>
+            <h1
+              style="
+                background-image: radial-gradient(
+                  rgba(255, 138, 0, 0.565),
+                  rgba(255, 138, 0, 0.125)
+                );
+                text-align: center;
+              "
+            >
+              m
+            </h1>
+            <h1
+              style="
+                background-image: linear-gradient(
+                  to right,
+                  rgba(255, 138, 0, 0.3),
+                  rgba(255, 138, 0, 0.125)
+                );
+                text-align: center;
+              "
+            >
+              e
+            </h1>
+            <h1
+              style="
+                background-image: linear-gradient(
+                  to right,
+                  rgba(255, 138, 0, 0.1),
+                  rgba(255, 138, 0, 0.25)
+                );
+                text-align: left;
+              "
+            >
+              s
+            </h1>
+          </div>
+          <div class="pl-header-mirror">
+            <h1
+              style="
+                transform: skewX(20deg) translate(-45px, 0);
+                text-align: right;
+              "
+            >
+              J
+            </h1>
+            <h1
+              style="
+                transform: skewX(10deg) translate(-18px, 0);
+                text-align: center;
+              "
+            >
+              a
+            </h1>
+            <h1
+              style="
+                transform: skewX(0deg) translate(0px, 0);
+                text-align: center;
+              "
+            >
+              m
+            </h1>
+            <h1
+              style="
+                transform: skewX(-10deg) translate(18px, 0);
+                text-align: center;
+              "
+            >
+              e
+            </h1>
+            <h1
+              style="
+                transform: skewX(-20deg) translate(45px, 0);
+                text-align: left;
+              "
+            >
+              s
+            </h1>
+          </div>
+          <div class="scroller-outer">
+            <div class="headlines" id="headline1">
+              <div class="scroller" id="scroller1">
+                <p>Frontend</p><span> &#9679 </span><p>Wordpress</p><span> &#9679 </span><p> Web Developer</p>
+              </div>
+            </div>
+            <div class="headlines" id="headline2">
+              <div class="scroller" id="scroller2">
+                <p>Design</p><span> &#9679 </span><p>Themes</p><span> &#9679 </span><p>Plugins</p><span> &#9679 </span><p>SEO</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </nav>
-      <div class="header">
-        <h1>J</h1>
-        <h1>a</h1>
-        <h1>m</h1>
-        <h1>e</h1>
-        <h1>s</h1>
       </div>
+        
+      </div>
+      <div class="services">
+        <!-- Page 2 Services Section -->
+        <div class="services-header">
+          <div class="col"></div>
+          <div class="col"><h2>All Services</h2></div>
+        </div>
+        <div class="service">
+          <div class="service-info">
+            <h3>Service<span></span>1</h3>
 
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+              distinctio non quibusdam quo, molestiae dolores! Iusto a
+              perspiciatis delectus atque odio officia. Corporis dolor optio
+              doloremque fuga accusamus voluptate aut.
+            </p>
+          </div>
+          <div class="service-img">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service-info">
+            <h3>Service<span></span> 2</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+              distinctio non quibusdam quo, molestiae dolores! Iusto a
+              perspiciatis delectus atque odio officia. Corporis dolor optio
+              doloremque fuga accusamus voluptate aut.
+            </p>
+          </div>
+          <div class="service-img">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1505201372024-aedc618d47c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service-info">
+            <h3>Service<span></span> 3</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+              distinctio non quibusdam quo, molestiae dolores! Iusto a
+              perspiciatis delectus atque odio officia. Corporis dolor optio
+              doloremque fuga accusamus voluptate aut.
+            </p>
+          </div>
+          <div class="service-img">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1531727991582-cfd25ce79613?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="service">
+          <div class="service-info">
+            <h3>Service<span></span> 4</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+              distinctio non quibusdam quo, molestiae dolores! Iusto a
+              perspiciatis delectus atque odio officia. Corporis dolor optio
+              doloremque fuga accusamus voluptate aut.
+            </p>
+          </div>
+          <div class="service-img">
+            <div class="image">
+              <img
+                src="https://images.unsplash.com/photo-1580215935060-a5adc57c5157?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <footer>
         <div class="footer-copy">
           <p>
-            James is a Scottish web designer and developer based in Ravenna, Italy.
-            Working with companies to build and proactively deliver engaging
-            brand experiences, and unique in his ability to take a strategic
-            approach to performance whilst being visually driven.
+            James is a Scottish web designer and developer based in Ravenna,
+            Italy. Working with individuals and companies to build and
+            proactively deliver engaging brand experiences, and unique in his
+            ability to take a strategic approach to performance whilst being
+            visually driven.
           </p>
         </div>
         <div class="footer-nav">
-          <div class="img"></div>
-          <div class="img"></div>
+          <div
+            class="img"
+            style="
+              background: url(./Assets/Images/Wallpaper1.png) no-repeat 50% 50%;
+              background-size: cover;
+            "
+          ></div>
+          <div
+            class="img"
+            style="
+              background: url(./Assets/Images/3.png) no-repeat 50% 50%;
+              background-size: cover;
+            "
+          ></div>
         </div>
       </footer>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-    <script src="https://unpkg.com/split-type"></script>
-    <script>
-      function startLoader() {
-        let counterElement = document.querySelector(".count");
-        let currentValue = 0;
-        // const letters = new SplitType("ml16", { text: "chars" });
-
-        function updateCounter() {
-          if (currentValue < 100) {
-            let increment = Math.floor(Math.random() * 10) + 1;
-            currentValue = Math.min(currentValue + increment, 100);
-            counterElement.textContent = currentValue;
-
-            let delay = Math.floor(Math.random() * 200) + 25;
-            setTimeout(updateCounter, delay);
-          }
-        }
-        updateCounter();
-      }
-      startLoader();
-      // The Counter Animation
-      gsap.to(".count", { opacity: 0, delay: 3.5, duration: 0.5 });
-
-      let textWrapper = document.querySelector(".ml16");
-      textWrapper.innerHTML = textWrapper.textContent.replace(
-        /\s/g,
-        "<span class='letter'>$&</span>"
-      );
-      // Split Text for animating title
-      const letters = new SplitType(".ml16", { text: "chars" });
-
-      // The Title animation
-      gsap.from(letters.chars, {
-        opacity: 0,
-        color: "white",
-        y: -10,
-        ease: "bounce.out",
-        duration: 1,
-        delay: 0.05,
-        stagger: 0.05,
-        repeat: 2,
-      });
-      // Animate Black Background down
-      gsap.to(".pre-loader", {
-        scale: 0.5,
-        ease: "power4.inOut",
-        duration: 2,
-        delay: 3,
-      });
-      // Animate Black Box to Red
-      gsap.to(".loader", {
-        height: "0",
-        ease: "power4.inOut",
-        duration: 1.5,
-        delay: 3.75,
-      });
-      // Animate red box out to top
-      gsap.to(".loader-bg", {
-        height: "0",
-        ease: "power4.inOut",
-        duration: 1.5,
-        delay: 4,
-      });
-      // Animat In Main White Background and content
-      gsap.to(".loader-2", {
-        clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        ease: "power4.inOut",
-        duration: 1.5,
-        delay: 3.5,
-      });
-      // Animate Main Heading up
-      gsap.from(".header h1", {
-        y: 200,
-        ease: "power4.inOut",
-        duration: 1.5,
-        delay: 3.75,
-        stagger: 0.05,
-      });
-      // Animate Footer Images in
-      gsap.to(".img", {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        ease: "power4.inOut",
-        duration: 1.5,
-        delay: 4.5,
-        stagger: 0.25,
-      });
-    </script>
   </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="./animations.js"></script>
+    
 </html>
