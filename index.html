@@ -5,13 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jamesdennis.org</title>
     <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/lenis@1.1.13/dist/lenis.css"
-    />
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css"/>
+
+    <style> /* Keyframe animation for pre-loading container */
+      @keyframes loading{
+        0%{
+          width: 0;
+        }
+        100%{
+          width: 100%
+        }
+      }
+    </style>
+    <div class="preLoad-container" style="background-color: #222222; position: fixed; width: 100%; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div class="loader-content" style="display: flex; flex-direction:column; justify-content: center; align-items: center; font-size: 1.6rem; gap: 2em; opacity: 1; transition: opacity 1.5s">
+        <div class="copy" style="display: flex; gap: 1em; justify-content: center; align-items: center;">
+            <img class="site-logo" src="./Assets/Images/JD-Logo-Favicon-removebg-preview.png" alt="site logo" style="width: 80px; z-index: 1; transform: translatex(100%)">
+            <p class="site-title" style="color: orange; transform: translateX(-30%); opacity: 0; overflow: hidden; z-index: -1;">jamesdennis.org</p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.5em; justify-content: center; align-items: center;">
+            <div class="loading-count" style="display: flex; align-items: center; gap: 1em;">
+                <p style=" font-size: 0.8rem">Loading...</p>
+                <p class="count" style="display:flex; align-items: center; justify-content: center; font-size: 0.8rem; width: 30px; height: 30px;">0</p>
+            </div>
+            <div class="loading-bar" style="background: black; width: 600px; height: 2px; border-radius: 4px;">
+                <div class="fill" style="height: 2px; border-radius: 1px; background: orange; animation: loading 3.5s forwards cubic-bezier(0, 0, 0, 0)">
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> -->
+
+    <script> /* Pre-Loader counter animation  */
+      function startLoader() {
+        document.querySelector( "body").style.visibility = "hidden";
+        document.querySelector( ".preLoad-container").style.visibility = "visible";
+        let counterElement = document.querySelector(".count");
+        let currentValue = 0;
+        
+        function updateCounter() {
+          if (currentValue < 100) {
+            let increment = Math.floor(Math.random() * 10) + 1;
+            currentValue = Math.min(currentValue + increment, 100);
+            counterElement.textContent = currentValue;
+            
+            let delay = Math.floor(Math.random() * 200) + 25;
+            setTimeout(updateCounter, delay);
+          }
+        }
+        updateCounter();
+        
+        gsap.to(".site-title", {
+        opacity: 1,
+        x: 0,
+        duration: 1.5,
+        delay: 3,
+        ease:"bounce.out",
+      });
+      gsap.to(".site-logo", {
+        x: 0,
+        duration: 1.5,
+        delay: 3,
+        ease:"bounce.out"
+      })
+      };
+      document.onreadystatechange = function () {
+        if (
+          document.readyState !== "complete") { 
+            document.querySelector( "body").style.visibility = "hidden";
+            document.querySelector( ".preLoad-container").style.visibility = "visible";
+          } else {
+            window.setTimeout(pause, 4000);
+            
+            function pause(){
+              document.querySelector( ".loader-content").style.opacity = "0";
+              
+              setTimeout(() => {
+                document.querySelector( ".preLoad-container").style.visibility = "hidden";
+                document.querySelector( "body").style.visibility = "visible";
+              }, 1500);
+              setTimeout(() => {
+                document.querySelector( ".main-container").style.opacity = "1";
+              }, 150);
+              
+              
+            }
+          };
+        };
+      startLoader();
+
+      
+    </script>
+
   </head>
+  
   <body>
-    <div class="main-container">
+    <!-- <div class="preLoad-container">
+      <div class="loader-content">
+        <div class="copy">
+          <p class="ml16">jamesdennis.org</p>
+        </div>
+        <div class="count">
+          <p>0</p>
+        </div>
+      </div>
+    </div> -->
+    <div class="main-container" style="opacity: 0; transition: opacity 0.5s ease" >
+        <div class="pre-loader">
+          <div class="loader-2">
+          <div class="loader"></div>
+          <div class="loader-bg"></div>
+        </div>
+      </div>
+      
       <div class="hero">
         <header class="header">
           <nav>
@@ -25,21 +133,7 @@
             </div>
           </nav>
         </header>
-        <div class="preLoad-container">
-          <div class="pre-loader">
-            <div class="loader"></div>
-            <div class="loader-bg"></div>
-          </div>
-          <div class="loader-content">
-            <div class="copy">
-              <p class="ml16">jamesdennis.org</p>
-            </div>
-            <div class="count">
-              <p>0</p>
-            </div>
-          </div>
-          <div class="loader-2"></div>
-        </div>
+        
         <div class="main-h1-container">
           <div class="pl-header">
             <h1
@@ -158,9 +252,7 @@
           </div>
         </div>
       </div>
-        
-      </div>
-      <div class="services">
+        <div class="services">
         <!-- Page 2 Services Section -->
         <div class="services-header">
           <div class="col"></div>
@@ -270,10 +362,11 @@
           ></div>
         </div>
       </footer>
+    </div>   
   </body>
-
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
