@@ -12,11 +12,6 @@ function raf(time) {
 
 requestAnimationFrame(raf); // The Counter Animation
 
-// Split Text for animating title
-  // const letters = new SplitType(".ml16", {
-  //   text: "chars",
-  // });
-
   const links = new SplitType(".links", {
     text: "words",
   });
@@ -39,40 +34,15 @@ gsap.fromTo(links.words,
     y: 0,
     opacity: 1,
     delay: 8.5,
-    stagger: 0.05,
+    stagger: 0.1,
   }
 );
-
-// Entry Logo text animate to nav bar
-  // gsap.to(".copy", {
-  //   x: -760,
-  //   y: -430,
-  //   opacity: 0,
-  //   delay: 5,
-  //   duration: 2,
-  //   ease: "power4.out",
-  // });
 
 gsap.to(".logo", {
   opacity: 1,
   duration: 0.4,
   delay: 8.5,
 });
-
-// The Title animation
-  // gsap.to(".ml16", {
-  //   opacity: 1,
-  // });
-
-  // gsap.from(letters.chars, {
-  //   opacity: 0,
-  //   y: -10,
-  //   ease: "bounce.out",
-  //   duration: 1.5,
-  //   delay: 0.05,
-  //   stagger: 0.05,
-  //   repeat: 1,
-  // });
 
 // ********** entrance to main content animation sequence
 // 1 animations container
@@ -87,7 +57,6 @@ gsap.to(".loader", {
   height: "0",
   ease: "power4.inOut",
   duration: 1.5,
-  // delay: 3.75,
   delay: 7,
 });
 //  3 Animate slide up-In Main dark Background
@@ -95,18 +64,15 @@ gsap.to(".loader-2", {
   clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
   ease: "power4.inOut",
   duration: 1.5,
-  delay: 7.5,
+  delay: 7.75,
 });
 // 4 Animate brand-color box out to top
 gsap.to(".loader-bg", {
   height: "0",
   ease: "power4.inOut",
   duration: 1.5,
-  // delay: 4.5,
-  delay: 7.2,
+  delay: 7.5,
 });
-
-
 
 // Fade-in header letters
 gsap.to(".pl-header h1", {
@@ -170,31 +136,14 @@ H1mTl.to(".pl-header-mirror h1", {
   duration: 1,
 });
 
+// Fade in-Up scrolling marquee
 
-// Footer Bio Animate in
-// gsap.to(".footer-copy p", {
-//   opacity: 1,
-//   y: 0,
-//   delay: 5.5,
-//   duration: 3,
-//   ease: "elastic.out",
-//   stagger: 0.25,
-// });
-
-// Animate Footer Images in
-// gsap.to(".img", {
-//   clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-//   ease: "power4.inOut",
-//   duration: 1.5,
-//   delay: 4.5,
-//   stagger: 0.25,
-// });
-
-  // Scrolling Marquee Texts
+// Scrolling Marquee Texts
 const scrollTl = gsap.timeline({
   defaults: {
+    opacity: 0,
     ease: "none",
-    duration: 8,
+    duration: 8, 
   },
   scrollTrigger: {
     trigger: ".scroller-outer",
@@ -207,6 +156,7 @@ const scrollTl = gsap.timeline({
 
 scrollTl.to("#headline1", {
   xPercent: -100,
+  autoAlpha: 0,
 });
 scrollTl.to("#headline2",
   {
@@ -225,7 +175,7 @@ var page2Tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".services",
     start: "top bottom",
-    end: "top 20%",
+    end: "top 50%",
     delay: 8,
     scrub: true,
   }
@@ -294,3 +244,24 @@ const observer = new IntersectionObserver(observerCallback, observerOptions);
 services.forEach((service) => {
   observer.observe(service);
 });
+
+// Footer Bio Animate in
+gsap.to(".footer-copy p", {
+  opacity: 1,
+  y: 0,
+  delay: 5.5,
+  duration: 3,
+  ease: "elastic.out",
+  stagger: 0.25,
+});
+// Animate Footer Images in
+gsap.to(".img", {
+  clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+  ease: "power4.inOut",
+  duration: 1.5,
+  delay: 4.5,
+  stagger: 0.25,
+});
+
+scrollTrigger.clearScrollMemory();
+window.history.scrollRestoration = "manual";

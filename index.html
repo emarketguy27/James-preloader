@@ -6,6 +6,10 @@
     <title>jamesdennis.org</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.13/dist/lenis.css"/>
+    <!-- <script src="https://kit.fontawesome.com/1429501f16.js" crossorigin="anonymous"></script>  *** only loads from actual live website - edit upon publishing to live -->
+    <link rel="stylesheet" href="./Assets/Fontawesome/fontawesome-free-6.6.0-web/css/brands.min.css">
+    <link rel="stylesheet" href="./Assets/Fontawesome/fontawesome-free-6.6.0-web/webfonts/fa-brands-400.woff2">
+    <link rel="stylesheet" href="./Assets/Fontawesome/fontawesome-free-6.6.0-web/css/all.css">
 
     <style> /* Keyframe animation for pre-loading container */
       @keyframes loading{
@@ -89,30 +93,26 @@
               setTimeout(() => {
                 document.querySelector( ".main-container").style.opacity = "1";
               }, 150);
-              
-              
-            }
+            };
+
+            const myElement = document.querySelector(".body");
+
+            window.addEventListener("scroll", (event) => {
+              myElement.style.overflowY = "auto";
+              setTimeout(() => {
+                myElement.style.overflowY = "hidden";
+              }, 4000);
+            });
           };
         };
-      startLoader();
 
-      
+      startLoader();
     </script>
 
   </head>
   
-  <body>
-    <!-- <div class="preLoad-container">
-      <div class="loader-content">
-        <div class="copy">
-          <p class="ml16">jamesdennis.org</p>
-        </div>
-        <div class="count">
-          <p>0</p>
-        </div>
-      </div>
-    </div> -->
-    <div class="main-container" style="opacity: 0; transition: opacity 0.5s ease" >
+  <body class="body" style="overflow-y: hidden;">
+    <div class="main-container" id="main-container" style="opacity: 0; transition: opacity 0.5s ease; overflow-y: hidden; overflow-x: hidden;" >
         <div class="pre-loader">
           <div class="loader-2">
           <div class="loader"></div>
@@ -246,94 +246,135 @@
             </div>
             <div class="headlines" id="headline2">
               <div class="scroller" id="scroller2">
-                <p>Design</p><span> &#9679 </span><p>Themes</p><span> &#9679 </span><p>Plugins</p><span> &#9679 </span><p>SEO</p>
+                <p>UI/UX Design</p><span> &#9679 </span><p>Themes</p><span> &#9679 </span><p>Plugins</p><span> &#9679 </span><p>SEO</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </div><!-- Page 2 Services Section -->
         <div class="services">
-        <!-- Page 2 Services Section -->
-        <div class="services-header">
-          <div class="col"></div>
-          <div class="col"><h2>All Services</h2></div>
-        </div>
-        <div class="service">
-          <div class="service-info">
-            <h3>Service<span></span>1</h3>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-              distinctio non quibusdam quo, molestiae dolores! Iusto a
-              perspiciatis delectus atque odio officia. Corporis dolor optio
-              doloremque fuga accusamus voluptate aut.
-            </p>
+         <section>
+          <div class="marquee">
+            <div class="marquee__content" style="font-size: 5rem; color: var(--brand)">
+              <i class="fa-brands fa-figma"></i>
+              <i class="fa-brands fa-node"></i>
+              <i class="fa-brands fa-stack-overflow"></i>
+              <i class="fa-brands fa-codepen"></i>
+              <i class="fa-brands fa-github"></i>
+              <i class="fa-brands fa-npm"></i>
+            </div>
+            <ul aria-hidden="true" class="marquee__content" style="font-size: 5rem; color: var(--brand)">
+              <i class="fa-brands fa-figma"></i>
+              <i class="fa-brands fa-node"></i>
+              <i class="fa-brands fa-stack-overflow"></i>
+              <i class="fa-brands fa-codepen"></i>
+              <i class="fa-brands fa-github"></i>
+              <i class="fa-brands fa-npm"></i>
+            </ul>
           </div>
-          <div class="service-img">
-            <div class="image">
-              <img
-                src="https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w"
-              />
+        </section>
+        <section>
+          <div class="marquee">
+            <div class="marquee__content  marquee-reverse" style="font-size: 5rem; color: var(--brand)">
+              <i class="fa-brands fa-wordpress"></i>
+              <i class="fa-brands fa-html5"></i>
+              <i class="fa-brands fa-css3-alt"></i>
+              <i class="fa-brands fa-js"></i>
+              <i class="fa-brands fa-elementor"></i>
+              <i class="fa-brands fa-react"></i>
+            </div>
+            <ul aria-hidden="true" class="marquee__content marquee-reverse" style="font-size: 5rem; color: var(--brand)">
+              <i class="fa-brands fa-wordpress"></i>
+              <i class="fa-brands fa-html5"></i>
+              <i class="fa-brands fa-css3-alt"></i>
+              <i class="fa-brands fa-js"></i>
+              <i class="fa-brands fa-elementor"></i>
+              <i class="fa-brands fa-react"></i>
+            </ul>
+          </div>
+        </section>
+        <div class="service-container">
+          <div class="services-header">
+            <div class="col"></div>
+            <div class="col"><h2>All Services</h2></div>
+          </div> 
+          <div class="service">
+            <div class="service-info">
+              <h3>Service<span></span>1</h3>
+
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+                distinctio non quibusdam quo, molestiae dolores! Iusto a
+                perspiciatis delectus atque odio officia. Corporis dolor optio
+                doloremque fuga accusamus voluptate aut.
+              </p>
+            </div>
+            <div class="service-img">
+              <div class="image">
+                <img
+                  src="https://images.unsplash.com/photo-1526413232644-8a40f03cc03b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="service">
-          <div class="service-info">
-            <h3>Service<span></span> 2</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-              distinctio non quibusdam quo, molestiae dolores! Iusto a
-              perspiciatis delectus atque odio officia. Corporis dolor optio
-              doloremque fuga accusamus voluptate aut.
-            </p>
-          </div>
-          <div class="service-img">
-            <div class="image">
-              <img
-                src="https://images.unsplash.com/photo-1505201372024-aedc618d47c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w"
-              />
+          <div class="service">
+            <div class="service-info">
+              <h3>Service<span></span> 2</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+                distinctio non quibusdam quo, molestiae dolores! Iusto a
+                perspiciatis delectus atque odio officia. Corporis dolor optio
+                doloremque fuga accusamus voluptate aut.
+              </p>
+            </div>
+            <div class="service-img">
+              <div class="image">
+                <img
+                  src="https://images.unsplash.com/photo-1505201372024-aedc618d47c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="service">
-          <div class="service-info">
-            <h3>Service<span></span> 3</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-              distinctio non quibusdam quo, molestiae dolores! Iusto a
-              perspiciatis delectus atque odio officia. Corporis dolor optio
-              doloremque fuga accusamus voluptate aut.
-            </p>
-          </div>
-          <div class="service-img">
-            <div class="image">
-              <img
-                src="https://images.unsplash.com/photo-1531727991582-cfd25ce79613?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w"
-              />
+          <div class="service">
+            <div class="service-info">
+              <h3>Service<span></span> 3</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+                distinctio non quibusdam quo, molestiae dolores! Iusto a
+                perspiciatis delectus atque odio officia. Corporis dolor optio
+                doloremque fuga accusamus voluptate aut.
+              </p>
+            </div>
+            <div class="service-img">
+              <div class="image">
+                <img
+                  src="https://images.unsplash.com/photo-1531727991582-cfd25ce79613?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80%20634w"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="service">
-          <div class="service-info">
-            <h3>Service<span></span> 4</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
-              distinctio non quibusdam quo, molestiae dolores! Iusto a
-              perspiciatis delectus atque odio officia. Corporis dolor optio
-              doloremque fuga accusamus voluptate aut.
-            </p>
-          </div>
-          <div class="service-img">
-            <div class="image">
-              <img
-                src="https://images.unsplash.com/photo-1580215935060-a5adc57c5157?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
-              />
+          <div class="service">
+            <div class="service-info">
+              <h3>Service<span></span> 4</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque
+                distinctio non quibusdam quo, molestiae dolores! Iusto a
+                perspiciatis delectus atque odio officia. Corporis dolor optio
+                doloremque fuga accusamus voluptate aut.
+              </p>
+            </div>
+            <div class="service-img">
+              <div class="image">
+                <img
+                  src="https://images.unsplash.com/photo-1580215935060-a5adc57c5157?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
+                />
+              </div>
             </div>
           </div>
-        </div>
+      </div>
       </div>
       <footer>
         <div class="footer-copy">
